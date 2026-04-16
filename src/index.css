@@ -1,37 +1,6 @@
-/* ============================================
-   FONTS
-   ============================================ */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-
-/* ============================================
-   CSS VARIABLES
-   ============================================ */
 :root {
-  /* Colors */
-  --color-bg: #ffffff;
-  --color-bg-soft: #f8f8f7;
-  --color-bg-muted: #f1f0ec;
-
-  --color-text: #1a1a1a;
-  --color-text-muted: #6b6b6b;
-  --color-text-faint: #a0a0a0;
-
-  --color-border: rgba(0, 0, 0, 0.1);
-  --color-border-mid: rgba(0, 0, 0, 0.18);
-
-  --color-accent: #1a1a1a;
-  --color-accent-soft: #f1f0ec;
-
-  /* Badge colors — WordPress */
-  --badge-wp-bg: #e1f5ee;
-  --badge-wp-text: #085041;
-
-  /* Badge colors — Front-end */
-  --badge-fe-bg: #e6f1fb;
-  --badge-fe-text: #0c447c;
-
   /* Typography */
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-main: "Inter", system-ui, sans-serif;
   --text-xs: 0.75rem; /* 12px */
   --text-sm: 0.875rem; /* 14px */
   --text-base: 1rem; /* 16px */
@@ -41,11 +10,22 @@
   --text-3xl: 1.875rem; /* 30px */
   --text-4xl: 2.25rem; /* 36px */
 
+  /* Colors */
+  --color-bg: #ffffff;
+  --color-bg-components: #f4f4f4;
+  --color-accent: #1a1a1a;
+
+  --color-border: rgba(0, 0, 0, 0.25);
+  --color-border-mid: #afaeae;
+
+  --color-text: #000000;
+
   /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
+  --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
   --space-12: 3rem;
@@ -57,6 +37,26 @@
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-full: 9999px;
+
+  /*
+  --color-bg-soft: #f8f8f7;
+  --color-bg-muted: #f1f0ec;
+
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b6b;
+  --color-text-faint: #a0a0a0;
+
+  --color-accent: #1a1a1a;
+  --color-accent-soft: #f1f0ec;
+
+  Badge colors — WordPress
+  --badge-wp-bg: #e1f5ee;
+  --badge-wp-text: #085041;
+
+  Badge colors — Front-end
+  --badge-fe-bg: #e6f1fb;
+  --badge-fe-text: #0c447c;
+  */
 
   /* Layout */
   --container-width: 860px;
@@ -82,14 +82,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-body {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  line-height: 1.7;
-}
-
 img {
   max-width: 100%;
   display: block;
@@ -103,6 +95,14 @@ a {
 ul,
 ol {
   list-style: none;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
 }
 
 /* ============================================
