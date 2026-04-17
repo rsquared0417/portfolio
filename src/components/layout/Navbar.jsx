@@ -1,32 +1,54 @@
+import { useState } from "react";
 import { Link } from "react-router";
 import "./Navbar.css";
 
+const navLinks = [
+  { label: "About", link: "/about" },
+  { label: "Skills", link: "/skills" },
+  { label: "Experience", link: "/experience" },
+  { label: "Work", link: "/work" },
+  { label: "Contact", link: "/contact" },
+];
+
 export function Navbar() {
-  const navBarLinks = [
-    { name: "About", link: "/about" },
-    { name: "Skills", link: "/skills" },
-    { name: "Experience", link: "/experience" },
-    { name: "Work", link: "/work" },
-    { name: "Contact", link: "/contact" },
-  ];
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="navbar">
-      <Link to="/" className="navbar-logo">
-        Ricky Roman / Front End Developer
-      </Link>
-      <a href="" className="navbar-toggle">
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </a>
-      <ul className="navbar-menu">
-        {navBarLinks.map((link, index) => (
-          <li key={index}>
-            <Link to={link.link}>{link.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <header className="navbar">
+      <div className="navbar-inner container">
+        <Link to="/" className="navbar-brand">
+          Ricky Roman / Front End Developer
+        </Link>
+
+        <nav className="navbar-links">
+          <ul className={`navbar-menu ${menuOpen ? "navbar-menu--open" : ""}`}>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.link}
+                  className="navbar-link"
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <button
+          className={`navbar-hamburger ${menuOpen ? "navbar-hamburger--open" : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle Menu"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
   );
 }

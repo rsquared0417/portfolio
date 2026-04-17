@@ -38,7 +38,16 @@
   --radius-lg: 12px;
   --radius-full: 9999px;
 
-  /*
+  /* Layout */
+  --container-width: 18rem;
+  --navbar-height: 4.25rem;
+  --navbar-height-desktop: 6.25rem;
+
+  /* Transitions */
+  --transition: 150ms ease;
+}
+
+/*
   --color-bg-soft: #f8f8f7;
   --color-bg-muted: #f1f0ec;
 
@@ -57,14 +66,6 @@
   --badge-fe-bg: #e6f1fb;
   --badge-fe-text: #0c447c;
   */
-
-  /* Layout */
-  --container-width: 860px;
-  --nav-height: 64px;
-
-  /* Transitions */
-  --transition: 150ms ease;
-}
 
 /* ============================================
    RESET
@@ -110,9 +111,9 @@ body {
    ============================================ */
 .container {
   width: 100%;
-  max-width: var(--container-width);
+  /* max-width: var(--container-width); */
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-5);
 }
 
 .section {
