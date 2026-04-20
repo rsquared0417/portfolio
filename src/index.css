@@ -33,15 +33,11 @@
   --space-24: 6rem;
 
   /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
+  --radius-main: 0.5rem;
 
   /* Layout */
-  --container-width: 18rem;
-  --navbar-height: 4.25rem;
-  --navbar-height-desktop: 6.25rem;
+  --navbar-spacing-mobile: var(--space-4);
+  --navbar-spacing-desktop: var(--space-5);
 
   /* Transitions */
   --transition: 150ms ease;
@@ -111,7 +107,6 @@ body {
    ============================================ */
 .container {
   width: 100%;
-  /* max-width: var(--container-width); */
   margin: 0 auto;
   padding: 0 var(--space-5);
 }
@@ -122,82 +117,4 @@ body {
 
 .section-alt {
   background-color: var(--color-bg-soft);
-}
-
-/* ============================================
-   TYPOGRAPHY UTILITIES
-   ============================================ */
-.section-label {
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-faint);
-  margin-bottom: var(--space-3);
-}
-
-.section-title {
-  font-size: var(--text-3xl);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: var(--space-4);
-}
-
-.section-sub {
-  font-size: var(--text-base);
-  color: var(--color-text-muted);
-  max-width: 520px;
-}
-
-/* ============================================
-   BUTTON UTILITIES
-   ============================================ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  font-family: var(--font-sans);
-  cursor: pointer;
-  transition: opacity var(--transition);
-  border: 1px solid transparent;
-}
-
-.btn:hover {
-  opacity: 0.85;
-}
-
-.btn-primary {
-  background-color: var(--color-accent);
-  color: #ffffff;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-text);
-  border-color: var(--color-border-mid);
-}
-
-/* ============================================
-   BADGE UTILITY
-   ============================================ */
-.badge {
-  display: inline-block;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  font-size: var(--text-xs);
-  font-weight: 500;
-}
-
-.badge-wp {
-  background-color: var(--badge-wp-bg);
-  color: var(--badge-wp-text);
-}
-
-.badge-fe {
-  background-color: var(--badge-fe-bg);
-  color: var(--badge-fe-text);
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import "./Navbar.css";
 
@@ -13,7 +13,24 @@ const navLinks = [
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => {
+      const next = !prev;
+      document.body.style.overflow = next ? "hidden" : "";
+      return next;
+    });
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    document.body.style.overflow = "";
+  };
 
   return (
     <header className="navbar">
@@ -22,16 +39,16 @@ export function Navbar() {
           Ricky Roman / Front End Developer
         </Link>
 
-        <nav className="navbar-links">
-          <ul className={`navbar-menu ${menuOpen ? "navbar-menu--open" : ""}`}>
+        <nav className={`navbar-menu ${menuOpen ? "navbar-menu--open" : ""}`}>
+          <ul className="navbar-list">
             {navLinks.map((link, index) => (
-              <li key={index}>
+              <li key={index} className="navbar-item">
                 <Link
                   to={link.link}
                   className="navbar-link"
                   onClick={closeMenu}
                 >
-                  {link.label}
+                  <span className="navbar-link-label">{link.label}</span>
                 </Link>
               </li>
             ))}
@@ -40,7 +57,7 @@ export function Navbar() {
 
         <button
           className={`navbar-hamburger ${menuOpen ? "navbar-hamburger--open" : ""}`}
-          onClick={() => setMenuOpen((prev) => !prev)}
+          onClick={toggleMenu}
           aria-label="Toggle Menu"
           aria-expanded={menuOpen}
         >

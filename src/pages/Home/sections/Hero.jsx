@@ -31,7 +31,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/*CARD 2 — About 
+        {/*CARD 2 — About*/}
         <div className="bento-card bento-card--about">
           <p className="bento-label">About</p>
           <p className="about-card__bio">{bio}</p>
@@ -48,14 +48,14 @@ export function Hero() {
             </svg>
           </a>
         </div>
-        CARD 3 — Stat
+        {/* CARD 3 — Stat */}
         <div className="bento-card bento-card--stat bento-card--dark">
           <span className="stat-card__number">150+</span>
           <span className="stat-card__label">
             Production WordPress sites managed
           </span>
         </div>
-        CARD 4 — CV
+        {/* CARD 4 — CV */}
         <div className="bento-card bento-card--cv">
           <span className="cv-card__title">CV</span>
           <a href="/cv.pdf" download className="cv-card__btn">
@@ -71,7 +71,7 @@ export function Hero() {
             </svg>
           </a>
         </div>
-        CARD 5 — Work preview
+        {/* CARD 5 — Work preview */}
         <div className="bento-card bento-card--work">
           <p className="bento-label">Featured work</p>
           <div className="work-card__previews">
@@ -89,7 +89,7 @@ export function Hero() {
             See all work →
           </a>
         </div>
-        CARD 6 — Skills
+        {/* CARD 6 — Skills */}
         <div className="bento-card bento-card--skills">
           <p className="bento-label">Expertise</p>
           <div className="skills-card__tags">
@@ -100,7 +100,7 @@ export function Hero() {
             ))}
           </div>
         </div>
-        CARD 7 — Social
+        {/* CARD 7 — Social */}
         <div className="bento-card bento-card--social">
           <div className="social-card__links">
             <a
@@ -150,7 +150,7 @@ export function Hero() {
             </a>
           </div>
           <p className="social-card__note">Let's connect</p>
-        </div>*/}
+        </div>
       </div>
     </>
   );
