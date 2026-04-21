@@ -3,7 +3,7 @@ import "./Home.css";
 
 export function Home() {
   return (
-    <main className="bento-page">
+    <main className="home-page container">
       <Hero />
     </main>
   );

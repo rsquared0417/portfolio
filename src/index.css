@@ -14,11 +14,14 @@
   --color-bg: #ffffff;
   --color-bg-components: #f4f4f4;
   --color-accent: #1a1a1a;
-
   --color-border: rgba(0, 0, 0, 0.25);
   --color-border-mid: #afaeae;
-
   --color-text: #000000;
+  --color-text-invert: #ffffff;
+  --color-text-muted: #5c5c5c;
+
+  /* Button Colors */
+  --button-color-about: #363636;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -34,6 +37,7 @@
 
   /* Radius */
   --radius-main: 0.5rem;
+  --radius-full: 9999px;
 
   /* Layout */
   --navbar-spacing-mobile: var(--space-4);
@@ -43,29 +47,7 @@
   --transition: 150ms ease;
 }
 
-/*
-  --color-bg-soft: #f8f8f7;
-  --color-bg-muted: #f1f0ec;
-
-  --color-text: #1a1a1a;
-  --color-text-muted: #6b6b6b;
-  --color-text-faint: #a0a0a0;
-
-  --color-accent: #1a1a1a;
-  --color-accent-soft: #f1f0ec;
-
-  Badge colors — WordPress
-  --badge-wp-bg: #e1f5ee;
-  --badge-wp-text: #085041;
-
-  Badge colors — Front-end
-  --badge-fe-bg: #e6f1fb;
-  --badge-fe-text: #0c447c;
-  */
-
-/* ============================================
-   RESET
-   ============================================ */
+/* RESET and BASE STYLE */
 *,
 *::before,
 *::after {
@@ -102,19 +84,9 @@ body {
   line-height: 1.7;
 }
 
-/* ============================================
-   LAYOUT UTILITIES
-   ============================================ */
+/* LAYOUT UTILITIES */
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--space-5);
-}
-
-.section {
-  padding: var(--space-24) 0;
-}
-
-.section-alt {
-  background-color: var(--color-bg-soft);
 }

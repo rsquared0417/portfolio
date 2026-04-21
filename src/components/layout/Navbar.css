@@ -164,8 +164,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
     white-space: nowrap;
     position: relative;
     padding: var(--space-2) var(--space-4);
@@ -181,7 +179,7 @@
   .navbar-link-label::after {
     content: "";
     position: absolute;
-    bottom: 5px;
+    bottom: 2px;
     left: 0;
     right: 0;
     height: 1px;
