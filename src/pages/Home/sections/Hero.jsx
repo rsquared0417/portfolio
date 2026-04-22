@@ -44,8 +44,8 @@ export function Hero() {
   };
 
   return (
-    <div className="hero-grid">
-      <div className="hero-card hero-card-hero">
+    <section className="hero-section">
+      <div className="default-card hero-card-hero">
         <div className="hero-card-hero-top">
           <div className="hero-card-photo-container">
             <div>RMTR</div>
@@ -55,11 +55,13 @@ export function Hero() {
           <h1 className="hero-card-hero-title">
             Crafting reliable web experiences, from WordPress to React.
           </h1>
-          <p className="hero-card-hero-name">{name}</p>
-          <p>{workStatus[0]}</p>
+          <div className="hero-card-hero-subtitle">
+            <p className="hero-card-hero-name">{name}</p>
+            <p className="hero-card-hero-work-status">{workStatus[0]}</p>
+          </div>
         </div>
       </div>
-      <div className="hero-card hero-card-about">
+      <div className="default-card hero-card-about">
         <div className="hero-card-label">
           <h2 className="hero-section-label">About</h2>
         </div>
@@ -71,7 +73,7 @@ export function Hero() {
           </a>
         </div>
       </div>
-      <div className="hero-card hero-card-feature">
+      <div className="default-card hero-card-feature">
         <div className="feature-card__content">
           <span className="feature-card__number">
             {highlights[current].number}
@@ -97,41 +99,37 @@ export function Hero() {
         )}
       </div>
       {/* CARD 4 — CV */}
-      <div className="hero-card bento-card--cv">
-        <span className="cv-card__title">CV</span>
-        <a href="/cv.pdf" download className="cv-card__btn">
+      <div className="default-card hero-card-cv">
+        <span className="hero-card-cv-title">CV</span>
+        <a href="/cv.pdf" download className="button button-cv">
           <span>Download</span>
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M8 3v8M4 9l4 4 4-4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <i className="fa-solid fa-caret-down"></i>
         </a>
       </div>
       {/* CARD 5 — DESIGN */}
-      <div className="hero-card bento-card--work">
+      <div className="default-card hero-card-design-1">
         <h2 className="hero-section-label">DESIGN</h2>
       </div>
-      <div className="hero-card bento-card--work">
+      {/* CARD 6 — DESIGN 2 */}
+      <div className="default-card hero-card-design-2">
         <h2 className="hero-section-label">DESIGN 2</h2>
       </div>
-      {/* CARD 6 — Skills */}
-      <div className="hero-card bento-card--skills">
-        <h2 className="hero-section-label">Expertise</h2>
-        <div className="skills-card__tags">
-          {skills.map((skill) => (
-            <span key={skill} className="skills-card__tag">
-              {skill}
-            </span>
-          ))}
+      <div className="default-card hero-card-skills">
+        <div className="hero-card-label">
+          <h2 className="hero-section-label">Skills</h2>
+        </div>
+        <div className="hero-card-content">
+          <div className="hero-card-skills-tags">
+            {skills.map((skill) => (
+              <span key={skill} className="hero-card-skills-tag">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
-      {/* CARD 7 — Social */}
-      <div className="hero-card bento-card--social">
+      {/* CARD 8 — Social */}
+      <div className="default-card hero-card-social">
         <p className="social-card__note">Let's connect</p>
         <div className="social-card__links">
           <a
@@ -161,6 +159,6 @@ export function Hero() {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

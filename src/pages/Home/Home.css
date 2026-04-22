@@ -3,6 +3,20 @@
   padding-top: var(--space-6) !important;
 }
 
+.spacer {
+  height: var(--space-7);
+}
+
+/* Default Card Styles */
+
+.default-card {
+  background-color: var(--color-bg-components);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-main);
+  overflow: hidden;
+  position: relative;
+}
+
 /* ============================================
    TABLET — 2 COLUMNS
    ============================================
