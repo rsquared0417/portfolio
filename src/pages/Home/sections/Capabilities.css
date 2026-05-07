@@ -1,0 +1,62 @@
+.capabilities-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-invert);
+  color: var(--color-text-invert);
+  padding: var(--space-4) var(--space-5) !important;
+}
+
+.what-i-do-sub-section,
+.about-sub-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.what-i-do-title,
+.about-title {
+  align-self: flex-start;
+  border: 1px solid var(--color-border-light);
+}
+
+.what-i-do-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.what-i-do-item,
+.about-text,
+.about-misc-image {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-main);
+}
+
+.what-i-do-label {
+  border-bottom: 1px solid var(--color-border-light) !important;
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-misc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-misc-image {
+  width: 100%;
+  height: 200px;
+  background-color: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,13 +1,13 @@
 import { Link } from "react-router";
 import "./Work.css";
 
-export default function Work() {
+export function Work() {
   return (
-    <section className="work-section">
+    <section className="work-section container">
       <div className="work-main">
         <div className="work-header">
           <Link to="/work">
-            <h2 className="work-header-text">Selected Work</h2>
+            <h2 className="section-header work-header-text">Selected Work</h2>
           </Link>
         </div>
         <div className="work-list">

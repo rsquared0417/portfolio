@@ -1,13 +1,14 @@
 import { Hero } from "./sections/Hero";
+import { Work } from "./sections/Work";
+import { Capabilities } from "./sections/Capabilities";
 import "./Home.css";
-import Work from "./sections/Work";
 
 export function Home() {
   return (
-    <main className="home-page container">
+    <main className="home-page">
       <Hero />
-      <div className="spacer"></div>
       <Work />
+      <Capabilities />
     </main>
   );
 }

@@ -14,14 +14,8 @@
 }
 
 .work-header-text {
-  display: inline-block;
   background-color: var(--color-bg-components);
-  padding: var(--space-1) var(--space-4);
-  font-size: var(--text-base);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-main);
-  font-weight: 400;
-  text-transform: uppercase;
 }
 
 .work-list {

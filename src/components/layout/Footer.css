@@ -1,0 +1,6 @@
+.footer {
+  margin: var(--space-4) 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
