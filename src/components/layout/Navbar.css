@@ -3,6 +3,7 @@
   padding-top: var(--navbar-spacing-mobile);
   background-color: var(--color-bg);
   z-index: 100;
+  border-bottom: 1px solid var(--color-border-mid);
 }
 
 .navbar-inner {
@@ -10,8 +11,11 @@
   justify-content: space-between;
   align-items: stretch;
   gap: var(--space-4);
-  border-bottom: 1px solid var(--color-border-mid);
-  padding-bottom: var(--navbar-spacing-mobile) !important;
+  padding-bottom: var(--navbar-spacing-mobile);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
 }
 
 /* BRAND */
@@ -119,7 +123,11 @@
 /* DESKTOP */
 @media screen and (min-width: 1024px) {
   .navbar {
-    padding: var(--navbar-spacing-desktop) 0;
+    padding-top: var(--navbar-spacing-desktop);
+  }
+
+  .navbar-inner {
+    padding-bottom: var(--navbar-spacing-desktop);
   }
 
   .navbar-hamburger {

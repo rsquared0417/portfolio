@@ -32,7 +32,7 @@ export function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="navbar-inner container">
+      <div className="navbar-inner">
         <Link to="/" className="navbar-brand">
           Ricky Roman / Front End Developer
         </Link>

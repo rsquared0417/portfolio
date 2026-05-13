@@ -82,8 +82,9 @@ export function Hero() {
             {highlights[current].label}
           </span>
         </div>
+        {/* Feature card button */}
         {hasMultiple && (
-          <button className="button-round button-cv" onClick={next}>
+          <button className="button-feature" onClick={next}>
             <i className="fa-solid fa-caret-right"></i>
           </button>
         )}
@@ -91,8 +92,10 @@ export function Hero() {
       {/* CARD 4 — CV */}
       <div className="default-card card-color-1 hero-card-cv">
         <span className="hero-card-cv-title">CV</span>
-        <a href="/cv.pdf" download className="button-round button-cv">
-          <i className="fa-solid fa-caret-down"></i>
+        {/* CV button */}
+        <a href="/cv.pdf" download className="button-cv">
+          <i className="fa-solid fa-arrow-down"></i>
+          <span>Download</span>
         </a>
       </div>
       {/* CARD 5 — DESIGN */}

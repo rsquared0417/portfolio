@@ -1,8 +1,112 @@
+import portfolioData from "../../data/portfolioData";
+import "./Contact.css";
+
+const contactMethods = [
+  {
+    id: "email",
+    label: "Email",
+    description: "Best way to reach me for work inquiries.",
+    icon: "fa-regular fa-envelope",
+    href: (data) => `mailto:${data.email}`,
+    value: (data) => data.email,
+    cta: "Send an email",
+  },
+  {
+    id: "github",
+    label: "GitHub",
+    description: "Check out my repositories and open source work.",
+    icon: "fa-brands fa-github",
+    href: (data) => data.github,
+    value: (data) => data.github,
+    cta: "View GitHub",
+  },
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    description: "Connect with me professionally.",
+    icon: "fa-brands fa-linkedin",
+    href: (data) => data.linkedin,
+    value: (data) => data.linkedin,
+    cta: "View LinkedIn",
+  },
+];
+
 export function Contact() {
   return (
-    <div>
-      <h1>Contact Me</h1>
-      <p>This is the contact page of my portfolio website.</p>
-    </div>
+    <main className="contact-page container">
+      {/* Header */}
+      <div className="contact-header">
+        <div className="contact-header__status">
+          <span className="contact-status-dot" />
+          <span className="contact-status-text">Available for work</span>
+        </div>
+        <h1 className="contact-header__headline">Let's Work Together</h1>
+        <p className="contact-header__sub">
+          I'm currently open to front-end roles and freelance opportunities.
+          Whether you have a project in mind or just want to connect — feel free
+          to reach out.
+        </p>
+      </div>
+
+      {/* Contact method cards */}
+      <div className="contact-methods">
+        {contactMethods.map((method) => (
+          <a
+            key={method.id}
+            href={method.href(portfolioData)}
+            target={method.id !== "email" ? "_blank" : undefined}
+            rel={method.id !== "email" ? "noreferrer" : undefined}
+            className="default-card card-color-1 contact-card"
+          >
+            <div className="contact-card__top">
+              <div className="contact-card__icon">
+                <i className={method.icon}></i>
+              </div>
+              <h2 className="contact-card__label">{method.label}</h2>
+            </div>
+            <p className="contact-card__description">{method.description}</p>
+            <div className="contact-card__footer">
+              <span className="contact-card__cta">{method.cta}</span>
+              <i className="fa-solid fa-arrow-right contact-card__arrow"></i>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {/* Availability card */}
+      <div className="default-card card-color-2 contact-availability">
+        <div className="contact-availability__left">
+          <p className="contact-availability__label">Current Status</p>
+          <h2 className="contact-availability__heading">
+            Open to front-end roles and freelance work.
+          </h2>
+          <p className="contact-availability__body">
+            Based in the Philippines. Available for remote work and open to
+            relocation opportunities. Response time is usually within 24–48
+            hours.
+          </p>
+        </div>
+        <div className="contact-availability__right">
+          <div className="contact-availability__stat">
+            <span className="contact-availability__stat-value">24–48h</span>
+            <span className="contact-availability__stat-label">
+              Average response time
+            </span>
+          </div>
+          <div className="contact-availability__stat">
+            <span className="contact-availability__stat-value">Remote</span>
+            <span className="contact-availability__stat-label">
+              Work preference
+            </span>
+          </div>
+          <div className="contact-availability__stat">
+            <span className="contact-availability__stat-value">PH</span>
+            <span className="contact-availability__stat-label">
+              Based in Philippines
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

@@ -1,74 +1,77 @@
-/* Hero-Grid */
+/* ============================================
+   HERO GRID — MOBILE FIRST
+   ============================================ */
 .hero-section {
   display: grid;
   gap: var(--space-4);
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
-    "hero hero"
-    "about about"
+    "hero    hero"
+    "about   about"
     "feature cv"
     "design-1 design-1"
     "design-2 design-2"
-    "skills skills"
-    "social social";
+    "skills  skills"
+    "social  social";
 }
 
 @media (min-width: 640px) {
   .hero-section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "hero hero hero"
-      "about feature cv"
+      "hero    hero    hero"
+      "about   about   about"
+      "feature cv      cv"
       "design-1 design-1 design-1"
       "design-2 design-2 design-2"
-      "skills skills social";
+      "skills  skills  social";
   }
 }
 
 @media (min-width: 1024px) {
-  .bento-page {
-    padding: var(--space-8);
-  }
-
   .hero-section {
     grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
-      "hero hero about about feature cv"
-      "hero hero about about feature cv"
-      "hero hero about about design-2 design-2"
-      "hero hero design-1 design-1 design-2 design-2"
-      "skills skills design-1 design-1 design-2 design-2"
-      "skills skills design-1 design-1 social social";
+      "hero hero about  about  feature  cv"
+      "hero hero about  about  feature  cv"
+      "hero hero about  about  design-1 design-1"
+      "hero hero skills skills design-2 design-2"
+      "hero hero skills skills design-2 design-2"
+      "social social social social design-2 design-2";
   }
 }
 
-/* Hero Card - HERO */
-
+/* ============================================
+   CARD — HERO
+   ============================================ */
 .hero-card-hero {
   grid-area: hero;
   min-height: 50vh;
-  padding: var(--space-4);
+  padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: var(--space-6);
 }
 
 .hero-card-hero-top {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-card-photo-container {
-  width: 125px;
-  height: 125px;
+  width: 80px;
+  height: 80px;
   border-radius: var(--radius-full);
   overflow: hidden;
   border: 1px solid var(--color-border);
-  object-fit: cover;
-  /*Placeholder*/
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-muted);
 }
 
 .hero-card-hero-bottom {
@@ -78,38 +81,39 @@
 }
 
 .hero-card-hero-title {
-  font-size: var(--text-3xl);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 400;
-  text-transform: capitalize;
   color: var(--color-text);
   line-height: 1.2;
-  text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .hero-card-hero-subtitle {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  align-items: center;
 }
 
 .hero-card-hero-name {
-  font-size: var(--text-base);
-  font-weight: 300;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-muted);
   line-height: 1.2;
-  text-align: center;
 }
 
 .hero-card-hero-work-status {
-  font-size: var(--text-sm);
+  display: inline-block;
+  align-self: flex-start;
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
-  text-align: center;
-  padding: var(--space-1) var(--space-2);
+  padding: var(--space-1) var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
 }
 
-/* Hero Card - ABOUT */
+/* ============================================
+   CARD — ABOUT
+   ============================================ */
 .hero-card-about {
   grid-area: about;
   display: flex;
@@ -118,47 +122,83 @@
 
 .hero-card-about-bio {
   font-size: var(--text-sm);
-  color: var(--color-text);
-  line-height: 1.7;
-  text-align: justify;
+  color: var(--color-text-muted);
+  line-height: 1.8;
 }
 
 .button-about {
   background-color: var(--button-color-about);
   color: var(--color-text-invert);
-  padding: var(--space-3);
+  padding: var(--space-3) var(--space-5);
   font-size: var(--text-sm);
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-main);
+  transition: opacity 150ms ease;
 }
 
-/*Placeholder*/
 .button-about:hover {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
-/* Hero Card - FEATURE */
+/* ============================================
+   CARD — FEATURE
+   ============================================ */
 .hero-card-feature {
   grid-area: feature;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 150px;
+  min-height: 160px;
+  padding: var(--space-5);
+  background-color: var(--color-bg-invert) !important;
+  color: var(--color-text-invert);
 }
 
-.stat-card__number {
-  font-size: clamp(3rem, 8vw, 4.5rem);
+.feature-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.feature-card__number {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
   line-height: 1;
   font-weight: 400;
   letter-spacing: -0.03em;
-  margin-bottom: var(--space-2);
+  color: var(--color-text-invert);
 }
 
-.stat-card__label {
-  font-size: 0.78rem;
+.feature-card__label {
+  font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.55);
-  max-width: 160px;
-  line-height: 1.4;
+  max-width: 140px;
+  line-height: 1.5;
+}
+
+.button-feature {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-text-invert);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.button-feature:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 /* ============================================
@@ -168,59 +208,61 @@
   grid-area: cv;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: flex-start;
-  padding: var(--space-4) 0 0 var(--space-4);
-  min-height: 140px;
-  border: 1px solid var(--color-border);
-  box-shadow: none;
+  justify-content: space-between;
+  padding: var(--space-5);
+  min-height: 160px;
 }
 
 .hero-card-cv-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 400;
   line-height: 1;
+  letter-spacing: -0.03em;
   color: var(--color-text);
 }
 
 .button-cv {
-  background-color: var(--button-color-about);
-  color: var(--color-text-invert);
-  font-size: var(--text-base);
-  font-weight: 400;
-  text-transform: capitalize;
+  align-self: flex-start;
+  width: auto;
+  height: auto;
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease;
 }
 
 .button-cv:hover {
+  border-color: var(--color-text);
   color: var(--color-text);
 }
 
 /* ============================================
-   CARD — DESIGN 1
+   CARD — DESIGN 1 & 2 (placeholders)
    ============================================ */
 .hero-card-design-1 {
   grid-area: design-1;
+  min-height: 120px;
   display: flex;
-  flex-direction: column;
-  min-height: 100px;
-  /*Placeholder*/
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  text-align: center;
 }
 
-/* ============================================
-   CARD — DESIGN 2
-   ============================================ */
 .hero-card-design-2 {
   grid-area: design-2;
+  min-height: 260px;
   display: flex;
-  flex-direction: column;
-  min-height: 300px;
-  /*Placeholder*/
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  text-align: center;
 }
 
 /* ============================================
@@ -239,12 +281,17 @@
 }
 
 .hero-card-skills-tag {
-  background-color: var(--color-tag-bg);
-  color: var(--color-tag-text);
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: var(--text-xs);
   border: 1px solid var(--color-border);
+  transition: background-color 150ms ease;
+}
+
+.hero-card-skills-tag:hover {
+  background-color: var(--color-bg-muted);
 }
 
 /* ============================================
@@ -253,10 +300,17 @@
 .hero-card-social {
   grid-area: social;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: var(--space-4);
+  justify-content: space-between;
   padding: var(--space-5);
+  gap: var(--space-4);
+}
+
+.social-card__note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 .social-card__links {
@@ -267,6 +321,7 @@
 
 .social-card__link {
   color: var(--color-text-muted);
+  font-size: var(--text-xl);
   transition: color 150ms ease;
   display: flex;
   align-items: center;
@@ -274,9 +329,4 @@
 
 .social-card__link:hover {
   color: var(--color-text);
-}
-
-.social-card__note {
-  font-size: 0.75rem;
-  color: var(--color-text-faint);
 }

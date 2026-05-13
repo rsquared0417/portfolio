@@ -21,6 +21,11 @@
   --color-text: #000000;
   --color-text-invert: #ffffff;
   --color-text-muted: #5c5c5c;
+  --color-bg-soft: #f8f8f7;
+  --color-bg-muted: #efefef;
+  --color-text-faint: #a0a0a0;
+  --color-tag-bg: rgba(0, 0, 0, 0.05);
+  --color-tag-text: #3a3835;
 
   /* Button Colors */
   --button-color-about: #363636;
@@ -45,6 +50,8 @@
   /* Layout */
   --navbar-spacing-mobile: var(--space-4);
   --navbar-spacing-desktop: var(--space-5);
+  --nav-height: 60px;
+  --max-width: 1100px;
 
   /* Transitions */
   --transition: 150ms ease;
@@ -90,6 +97,7 @@ body {
 /* LAYOUT UTILITIES */
 .container {
   width: 100%;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-5);
 }

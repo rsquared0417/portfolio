@@ -12,6 +12,8 @@ const projects = [
     tools: ["HTML", "CSS"],
     liveUrl: "",
     repoUrl: "",
+    thumbnail: "",
+    screenshot: "",
   },
   {
     id: "landing-page-02",
@@ -26,6 +28,8 @@ const projects = [
     tools: ["HTML", "CSS", "JavaScript"],
     liveUrl: "",
     repoUrl: "",
+    thumbnail: "",
+    screenshot: "",
   },
   {
     id: "landing-page-03",
@@ -40,6 +44,8 @@ const projects = [
     tools: ["HTML", "CSS", "JavaScript"],
     liveUrl: "",
     repoUrl: "",
+    thumbnail: "",
+    screenshot: "",
   },
   {
     id: "portfolio",
@@ -54,6 +60,8 @@ const projects = [
     tools: ["React", "Vite", "React Router", "CSS"],
     liveUrl: "",
     repoUrl: "",
+    thumbnail: "",
+    screenshot: "",
   },
   {
     id: "react-app-01",
@@ -68,6 +76,8 @@ const projects = [
     tools: ["React"],
     liveUrl: "",
     repoUrl: "",
+    thumbnail: "",
+    screenshot: "",
   },
 ];
 
