@@ -97,9 +97,13 @@ body {
 /* LAYOUT UTILITIES */
 .container {
   width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
   padding: 0 var(--space-5);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-8);
+  }
 }
 
 /* Default Styles */

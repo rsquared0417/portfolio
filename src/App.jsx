@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router";
+import { ScrollToTop } from "./components/layout/ScrollToTop";
 
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
@@ -14,6 +15,7 @@ import { NotFound } from "./pages/NotFound";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

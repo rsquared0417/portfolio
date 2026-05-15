@@ -1,15 +1,33 @@
 import { Link } from "react-router";
-import workExperience from "../../../data/workExperience";
+import projects from "../../../data/projects";
 import "./Work.css";
 
+const STATUS_LABELS = {
+  completed: "Completed",
+  "in-progress": "In Progress",
+  planned: "Planned",
+};
+
+const STATUS_CLASSES = {
+  completed: "badge--completed",
+  "in-progress": "badge--in-progress",
+  planned: "badge--planned",
+};
+
 export function Work() {
-  const featured = workExperience.slice(0, 2);
+  const featured = projects
+    .filter((p) => p.status === "completed" || p.status === "in-progress")
+    .slice(0, 2);
 
   return (
     <section className="work-section container">
       <div className="work-main">
         <div className="work-header">
-          <Link to="/experience" className="work-header-link">
+          <Link
+            to="/experience"
+            state={{ tab: "work" }}
+            className="work-header-link"
+          >
             <h2 className="section-header work-header-text">Selected Work</h2>
           </Link>
         </div>
@@ -17,12 +35,13 @@ export function Work() {
         <div className="work-list">
           {featured.map((item) => (
             <div key={item.id} className="work-item">
+              {/* Info card */}
               <div className="default-card work-item-card">
                 <div className="work-item-header">
-                  <div className="work-item-icon">{item.role.charAt(0)}</div>
+                  <div className="work-item-icon">{item.title.charAt(0)}</div>
                   <div className="work-title">
-                    <h3>{item.role}</h3>
-                    <p>{item.company}</p>
+                    <h3>{item.title}</h3>
+                    <p>{item.type}</p>
                   </div>
                 </div>
 
@@ -31,7 +50,7 @@ export function Work() {
                 </div>
 
                 <div className="work-item-tags">
-                  {item.tools.slice(0, 4).map((tool) => (
+                  {item.tools.map((tool) => (
                     <span key={tool} className="work-item-tag">
                       {tool}
                     </span>
@@ -39,37 +58,63 @@ export function Work() {
                 </div>
 
                 <div className="work-item-footer">
-                  <div className="work-item-year">
-                    <p className="work-meta-label">Duration</p>
-                    <p className="work-meta-value">{item.duration}</p>
+                  <div>
+                    <p className="work-meta-label">Year</p>
+                    <p className="work-meta-value">{item.year}</p>
                   </div>
-                  <div className="work-item-type">
-                    <p className="work-meta-label">Type</p>
-                    <p className="work-meta-value">{item.type}</p>
+                  <div>
+                    <p className="work-meta-label">Status</p>
+                    <span
+                      className={`cs-status-badge ${STATUS_CLASSES[item.status]}`}
+                    >
+                      {STATUS_LABELS[item.status]}
+                    </span>
                   </div>
                 </div>
               </div>
 
-              <Link to={`/experience/${item.id}`} className="work-item-link">
+              {/* Mobile CTA */}
+              <Link
+                to={`/experience/case-studies/${item.id}`}
+                className="work-item-link"
+              >
                 <span className="work-item-link-button">
                   View Case Study
                   <i className="fa-solid fa-square-arrow-up-right"></i>
                 </span>
               </Link>
 
+              {/* Image / screenshot panel */}
               <div className="work-item-image">
-                <div className="work-item-image-placeholder">
-                  <span>{item.role}</span>
-                </div>
+                {item.thumbnail ? (
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "top",
+                    }}
+                  />
+                ) : (
+                  <div className="work-item-image-placeholder">
+                    <span>{item.title}</span>
+                  </div>
+                )}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <Link to="/experience" className="work-view-more">
+      <Link
+        to="/experience"
+        state={{ tab: "case-studies" }}
+        className="work-view-more"
+      >
         <span className="work-view-more-button">
-          <p>Full Case Studies</p>
+          <p>View All Projects</p>
           <i className="fa-solid fa-square-arrow-up-right"></i>
         </span>
       </Link>

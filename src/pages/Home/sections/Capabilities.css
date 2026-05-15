@@ -1,10 +1,13 @@
+/* ============================================
+   CAPABILITIES SECTION
+   ============================================ */
 .capabilities-section {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
   background-color: var(--color-bg-invert);
   color: var(--color-text-invert);
-  padding: var(--space-6) var(--space-5);
+  padding: var(--space-6) var(--space-5) !important;
   border-radius: var(--radius-main);
 }
 
@@ -50,13 +53,23 @@
   align-items: center;
   gap: var(--space-3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: 500;
+  padding: var(--space-3) var(--space-4);
+  width: 100%;
 }
 
 .what-i-do-number {
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.what-i-do-item .card-content {
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
 }
 
 /* ============================================
@@ -87,6 +100,13 @@
   letter-spacing: -0.02em;
 }
 
+.about-text .card-content {
+  padding: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+}
+
 .about-misc {
   display: flex;
   flex-direction: column;
@@ -97,7 +117,8 @@
 
 .about-misc-image {
   width: 100%;
-  height: 180px;
+  flex: 1;
+  min-height: 160px;
   background-color: #1a1a1a;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-main);
@@ -129,7 +150,7 @@
 }
 
 /* ============================================
-   TABLET+
+   TABLET — 640px+
    ============================================ */
 @media (min-width: 640px) {
   .what-i-do-list {
@@ -145,13 +166,21 @@
   }
 
   .about-misc {
-    width: 280px;
+    width: 260px;
     flex-shrink: 0;
+    justify-content: space-between;
   }
 }
 
+/* ============================================
+   DESKTOP — 1024px+
+   ============================================ */
 @media (min-width: 1024px) {
   .capabilities-section {
     padding: var(--space-8);
+  }
+
+  .about-misc {
+    width: 300px;
   }
 }

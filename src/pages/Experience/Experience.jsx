@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import workExperience from "../../data/workExperience";
 import projects from "../../data/projects";
 import "./Experience.css";
@@ -17,7 +17,9 @@ const STATUS_CLASSES = {
 };
 
 export function Experience() {
-  const [activeTab, setActiveTab] = useState("work");
+  const location = useLocation();
+  const initialTab = location.state?.tab || "work";
+  const [activeTab, setActiveTab] = useState(initialTab);
 
   return (
     <main className="experience-page container">
