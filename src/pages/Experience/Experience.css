@@ -2,7 +2,7 @@
    PAGE
    ============================================ */
 .experience-page {
-  padding: var(--space-6) var(--space-5);
+  padding: var(--space-6) var(--space-5) !important;
   display: flex;
   flex-direction: column;
   gap: var(--space-6);

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import workExperience from "../../data/workExperience";
 import projects from "../../data/projects";
+import portfolioData from "../../data/portfolioData";
 import "./Experience.css";
 
 const STATUS_LABELS = {
@@ -17,6 +18,7 @@ const STATUS_CLASSES = {
 };
 
 export function Experience() {
+  const { workStatus } = portfolioData;
   const location = useLocation();
   const initialTab = location.state?.tab || "work";
   const [activeTab, setActiveTab] = useState(initialTab);
@@ -25,8 +27,8 @@ export function Experience() {
     <main className="experience-page container">
       <div className="experience-header">
         <span className="exp-pill-label">Experience</span>
+        <span className="exp-pill-label">{portfolioData.workStatus[0]}</span>
       </div>
-
       {/* Filter Tabs */}
       <div className="exp-tabs">
         <button
@@ -42,7 +44,6 @@ export function Experience() {
           Case Studies
         </button>
       </div>
-
       {/* Work Experience Tab */}
       {activeTab === "work" && (
         <div className="exp-list">
@@ -62,16 +63,6 @@ export function Experience() {
               <div className="exp-card__summary">
                 <p>{item.shortSummary}</p>
               </div>
-
-              {/*<div className="exp-card__highlights">
-                {item.highlights.map((h) => (
-                  <div key={h.title} className="exp-highlight">
-                    <h4 className="exp-highlight__title">{h.title}</h4>
-                    <p className="exp-highlight__desc">{h.description}</p>
-                  </div>
-                ))}
-              </div>*/}
-
               <div className="exp-card__footer">
                 <div className="exp-card__meta">
                   <div className="exp-card__meta-item">
@@ -83,15 +74,6 @@ export function Experience() {
                     <span className="exp-meta-value">{item.type}</span>
                   </div>
                 </div>
-
-                <div className="exp-card__tools">
-                  {item.tools.map((tool) => (
-                    <span key={tool} className="exp-tool-tag">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-
                 <Link
                   to={`/experience/work-experience/${item.id}`}
                   className="exp-card__cta"
@@ -119,7 +101,6 @@ export function Experience() {
                   </div>
                 )}
               </div>
-
               <div className="cs-card__body">
                 <div className="cs-card__top">
                   <div className="cs-card__labels">
@@ -132,19 +113,9 @@ export function Experience() {
                   </div>
                   <span className="cs-year">{project.year}</span>
                 </div>
-
                 <h2 className="cs-card__title">{project.title}</h2>
                 <p className="cs-card__summary">{project.shortSummary}</p>
-
-                <div className="cs-card__tools">
-                  {project.tools.map((tool) => (
-                    <span key={tool} className="exp-tool-tag">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
               </div>
-
               <div className="cs-card__footer">
                 <Link
                   to={`/experience/case-studies/${project.id}`}

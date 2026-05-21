@@ -1,18 +1,15 @@
-/* ============================================
-   HERO GRID — MOBILE FIRST
-   ============================================ */
 .hero-section {
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-4);
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
-    "hero     hero"
-    "about    about"
-    "feature  cv"
+    "hero hero"
+    "about about"
+    "feature cv"
     "design-1 design-1"
     "design-2 design-2"
-    "skills   skills"
-    "social   social";
+    "skills skills"
+    "social social";
 }
 
 @media (min-width: 640px) {
@@ -20,33 +17,31 @@
     gap: var(--space-4);
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-      "hero    hero    about    about"
-      "hero    hero    about    about"
-      "feature cv      cv       cv"
-      "design-1 design-1 design-1 design-1"
-      "design-2 design-2 design-2 design-2"
-      "skills  skills   social   social";
+      "hero hero about about"
+      "hero hero about about"
+      "feature feature cv cv"
+      "design-1 design-1 design-2 design-2"
+      "design-1 design-1 design-2 design-2"
+      "skills skills skills skills"
+      "social social social social";
   }
 }
 
 @media (min-width: 1024px) {
   .hero-section {
+    min-height: 85vh;
     gap: var(--space-4);
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, auto);
     grid-template-areas:
-      "hero hero hero hero about  about  about  about  feature feature cv      cv"
-      "hero hero hero hero about  about  about  about  feature feature cv      cv"
-      "hero hero hero hero about  about  about  about  feature feature cv      cv"
-      "hero hero hero hero design-1 design-1 design-1 design-1 design-2 design-2 design-2 design-2"
-      "hero hero hero hero skills skills skills skills design-2 design-2 design-2 design-2"
-      "social social social social social social social social design-2 design-2 design-2 design-2";
+      "hero hero about about feature feature cv cv"
+      "hero hero about about design-1 design-1 design-2 design-2"
+      "hero hero skills skills skills skills design-2 design-2"
+      "social social social social social social design-2 design-2";
   }
 }
 
-/* ============================================
-   CARD — HERO
-   ============================================ */
+/* CARD — HERO */
 .hero-card-hero {
   grid-area: hero;
   padding: var(--space-4);
@@ -60,25 +55,26 @@
 @media (min-width: 640px) {
   .hero-card-hero {
     min-height: unset;
-    padding: var(--space-5);
+    padding: var(--space-4);
   }
 }
 
 @media (min-width: 1024px) {
   .hero-card-hero {
-    padding: var(--space-6);
+    justify-content: space-evenly;
     min-height: unset;
+    padding: var(--space-4);
   }
 }
 
 .hero-card-hero-top {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .hero-card-photo-container {
-  width: 64px;
-  height: 64px;
+  width: 150px;
+  height: 150px;
   border-radius: var(--radius-full);
   overflow: hidden;
   border: 1px solid var(--color-border);
@@ -94,8 +90,8 @@
 
 @media (min-width: 1024px) {
   .hero-card-photo-container {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     font-size: var(--text-sm);
   }
 }

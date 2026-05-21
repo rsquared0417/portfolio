@@ -3,113 +3,116 @@ const workExperience = [
     id: "wordpress-engineer",
     type: "Full-time",
     role: "WordPress Engineer",
-    company: "Previous Company",
-    location: "Philippines",
-    duration: "2021 – 2024",
+    company: "Elite Digital Ltd.",
+    location: "Remote (England & Wales)",
+    duration: "Sept 2023 - Feb 2026",
     shortSummary:
-      "Managed and maintained 150+ production WordPress websites with a focus on stability, security, and reliability across multiple hosting platforms.",
+      "Worked as a WordPress Engineer managing and maintaining 150+ production client websites. Focused on ensuring uptime, security, performance, and stability across multiple hosting environments while handling front-end fixes, content migration, and client communication.",
     highlights: [
       {
-        title: "Production Site Management",
+        title: "Large-Scale Website Management",
         description:
-          "Managed maintenance, updates, and monitoring for 150+ live WordPress websites — covering core, theme, and plugin updates with a structured workflow.",
+          "Managed maintenance and updates for 150+ production WordPress websites across multiple client accounts, ensuring consistent uptime, reliability, and performance at scale.",
       },
       {
-        title: "QA & Deployment Safety",
+        title: "Security & Vulnerability Management",
         description:
-          "Reduced deployment risk through offsite backups, staging environment validation, and regression testing before pushing changes to production.",
+          "Conducted security hardening, vulnerability remediation, and proactive monitoring using Wordfence and ManageWP to protect client websites from threats and downtime.",
       },
       {
-        title: "Security Hardening",
+        title: "Hosting & Performance Troubleshooting",
         description:
-          "Conducted security audits and vulnerability remediation using Wordfence and industry best practices — hardening login protection, file permissions, and plugin hygiene.",
+          "Diagnosed and resolved hosting and performance issues across multiple platforms including Kinsta, WP Engine, Cloudways, and Bluehost, coordinating with support teams when needed.",
       },
       {
-        title: "Issue Resolution",
+        title: "Front-End Development & Layout Fixes",
         description:
-          "Diagnosed and resolved plugin conflicts, theme issues, and security incidents in live environments with minimal downtime.",
+          "Implemented responsive front-end fixes, layout improvements, and content population using Elementor and Cornerstone page builders across various client websites.",
       },
       {
-        title: "Front-End Implementation",
+        title: "QA & Deployment Risk Reduction",
         description:
-          "Implemented responsive front-end fixes and built pages using Elementor, Cornerstone (Pro Theme), Slider Revolution, and other WordPress page builders.",
+          "Reduced deployment risk through structured backup protocols, staging environment validation, and QA/regression testing before pushing changes to live environments.",
       },
       {
-        title: "Monitoring & Alerting",
+        title: "Web Development Training",
         description:
-          "Set up monitoring and alerting workflows using ManageWP and uptime tools to proactively catch issues before clients noticed.",
-      },
-      {
-        title: "Performance & Hosting Support",
-        description:
-          "Troubleshot hosting, caching, and performance issues across multiple platforms — identifying bottlenecks and coordinating with hosting providers.",
-      },
-      {
-        title: "Content Migration",
-        description:
-          "Migrated structured content from Figma design files and documents into WordPress templates accurately and efficiently.",
-      },
-      {
-        title: "Site Auditing",
-        description:
-          "Used website crawlers and broken link checkers to audit sites for missing pages, broken links, and crawl errors.",
-      },
-      {
-        title: "Front-End Development Training",
-        description:
-          "Received formal front-end development training from the company, deepening skills in HTML, CSS, JavaScript, and modern web workflows.",
+          "Received formal web development training from the company, deepening skills in HTML, CSS, JavaScript, and modern web workflows.",
       },
     ],
     tools: [
       "WordPress",
       "Elementor",
       "Cornerstone",
-      "Slider Revolution",
-      "Wordfence",
+      "ACF",
+      "WooCommerce",
+      "WordFence",
       "ManageWP",
-      "HTML",
-      "CSS",
+      "Hosting Services",
+      "Kinsta",
+      "WP Engine",
+      "Cloudways",
+      "Bluehost",
+      "cPanel",
+      "FTP (FileZilla)",
+      "Chrome DevTools",
+      "HTML5",
+      "CSS3",
       "JavaScript",
       "Figma",
+      "ClickUp",
+      "Slack",
     ],
   },
   {
     id: "web-development-intern",
     type: "Internship",
-    role: "Web Development Intern",
-    company: "Previous Company",
-    location: "Philippines",
-    duration: "2020",
+    role: "Web Developer Intern",
+    company: "Qadra Studio",
+    location: "Remote (Muntinlupa City, Philippines)",
+    duration: "May 2022 - Dec 2022",
     shortSummary:
-      "Collaborated with cross-functional teams to build and enhance client websites using HTML, CSS, JavaScript, and WordPress while translating Figma designs into functional web pages.",
+      "Worked as a Web Developer Intern building and delivering client websites under the supervision of a senior developer. Focused on translating Figma designs into functional, responsive WordPress pages using Elementor while collaborating with cross-functional teams.",
     highlights: [
       {
         title: "Client Website Development",
         description:
-          "Collaborated with cross-functional teams during the development of client websites — contributing to both front-end build and QA phases.",
+          "Built and delivered full client websites using WordPress and Elementor, including custom post types, custom layouts, and responsive designs for Asian Coatings, Watt Mobility, Safti First, and MATC.",
       },
       {
-        title: "Figma to Web",
+        title: "Figma to WordPress Translation",
         description:
-          "Translated Figma design files into responsive, functional web pages using HTML, CSS, JavaScript, and WordPress.",
+          "Translated Figma design files into responsive, functional web pages with close attention to design accuracy, layout consistency, and cross-device compatibility.",
       },
       {
-        title: "Plugin Integration & Debugging",
+        title: "Custom Post Types & Layouts",
         description:
-          "Assisted with WordPress plugin integration, debugging, and QA testing across multiple client projects.",
+          "Developed custom post types and custom layouts using WordPress tools to match client requirements and maintain content structure across multiple sections.",
       },
       {
-        title: "Content & Data Management",
+        title: " QA Testing & Debugging",
         description:
-          "Supported client projects under supervision by managing content updates, data entry, and page maintenance.",
+          "Assisted with plugin integration, debugging, QA testing, content management, and data updates to ensure smooth delivery of client projects.",
       },
       {
-        title: "Training & Onboarding",
+        title: "Cross-Functional Collaboration",
         description:
-          "Participated in structured training and onboarding sessions covering web development fundamentals, design principles, and team workflows.",
+          "Collaborated with designers, developers, and project managers on the development and delivery of client websites in a professional agency environment.",
       },
     ],
-    tools: ["HTML", "CSS", "JavaScript", "WordPress", "Figma"],
+    tools: [
+      "WordPress",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Elementor",
+      "ACF",
+      "JetEngine",
+      "Slider Revolution",
+      "Figma",
+      "Chrome DevTools",
+      "Slack",
+    ],
   },
 ];
 

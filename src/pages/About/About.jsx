@@ -2,8 +2,9 @@ import portfolioData from "../../data/portfolioData";
 import "./About.css";
 
 export function About() {
-  const {
+  /*const {
     name,
+    portrait,
     headline,
     bio,
     email,
@@ -12,14 +13,15 @@ export function About() {
     education,
     certifications,
     achievements,
-    coreSkills,
-  } = portfolioData;
+    skills,
+  } = portfolioData;*/
+  const data = { ...portfolioData };
 
   return (
     <main className="about-page container">
       {/* Headline */}
       <div className="default-card card-color-1 about-headline">
-        <h1 className="about-headline__text">{headline}</h1>
+        <h1 className="about-headline__text">{data.headline}</h1>
       </div>
 
       {/* Three column grid */}
@@ -28,7 +30,7 @@ export function About() {
         <div className="about-col about-col--left">
           {/* Bio */}
           <div className="default-card card-color-1 about-card about-card--bio">
-            <p className="about-bio">{bio}</p>
+            <p className="about-bio">{data.detailedBio}</p>
           </div>
 
           {/* Key Achievements */}
@@ -37,7 +39,7 @@ export function About() {
               <h2 className="section-label">Key Achievements</h2>
             </div>
             <div className="about-achievements">
-              {achievements.map((item) => (
+              {data.achievements.map((item) => (
                 <div key={item.label} className="about-achievement-item">
                   <span className="about-achievement-value">{item.value}</span>
                   <span className="about-achievement-label">{item.label}</span>
@@ -55,7 +57,7 @@ export function About() {
               <h2 className="section-label">Education</h2>
             </div>
             <div className="about-education">
-              {education.map((item) => (
+              {data.education.map((item) => (
                 <div key={item.degree} className="about-education-item">
                   <h3 className="about-education-degree">{item.degree}</h3>
                   <p className="about-education-school">
@@ -64,21 +66,17 @@ export function About() {
                 </div>
               ))}
             </div>
-            <div
-              className="card-label"
-              style={{
-                borderTop: "1px solid var(--color-border)",
-                borderBottom: "none",
-              }}
-            >
+          </div>
+          <div className="default-card card-color-1 about-card">
+            <div className="card-label">
               <h2 className="section-label">Certifications</h2>
             </div>
             <div className="about-education">
-              {certifications.map((item) => (
+              {data.certifications.map((item) => (
                 <div key={item.title} className="about-education-item">
                   <h3 className="about-education-degree">{item.title}</h3>
                   <p className="about-education-school">
-                    {item.issuer}, {item.year}
+                    {item.issuer}, {item.year} ({item.status})
                   </p>
                 </div>
               ))}
@@ -91,11 +89,24 @@ export function About() {
               <h2 className="section-label">Core Skills</h2>
             </div>
             <div className="about-skills">
-              {coreSkills.map((item) => (
-                <div key={item.category} className="about-skill-item">
-                  <h3 className="about-skill-category">{item.category}</h3>
-                  <p className="about-skill-list">{item.skills}</p>
+              {data.skills.map((skill) => (
+                <div key={skill.category} className="about-skill-item">
+                  <h3 className="about-skill-category">{skill.category}</h3>
+                  <p className="about-skill-list">{skill.skills}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+          {/* Hobbies */}
+          <div className="default-card card-color-1 about-card">
+            <div className="card-label">
+              <h2 className="section-label">Hobbies</h2>
+            </div>
+            <div className="about-hobbies">
+              {data.hobbies.map((hobby) => (
+                <span key={hobby} className="about-hobby-item">
+                  {hobby}
+                </span>
               ))}
             </div>
           </div>
@@ -106,14 +117,18 @@ export function About() {
           {/* Photo */}
           <div className="default-card card-color-1 about-card about-card--photo">
             <div className="about-photo-placeholder">
-              <span>Photo</span>
+              <img
+                src={data.portrait}
+                alt={`${data.name}'s portrait`}
+                className="about-photo"
+              />
             </div>
           </div>
 
           {/* Social grid */}
           <div className="about-social-grid">
             <a
-              href={github}
+              href={data.github}
               target="_blank"
               rel="noreferrer"
               className="default-card card-color-1 about-social-card"
@@ -121,7 +136,7 @@ export function About() {
               <i className="fa-brands fa-github"></i>
             </a>
             <a
-              href={linkedin}
+              href={data.linkedin}
               target="_blank"
               rel="noreferrer"
               className="default-card card-color-1 about-social-card"
@@ -129,7 +144,7 @@ export function About() {
               <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
-              href={`mailto:${email}`}
+              href={`mailto:${data.email}`}
               className="default-card card-color-1 about-social-card"
             >
               <i className="fa-regular fa-envelope"></i>
@@ -149,14 +164,6 @@ export function About() {
               className="default-card card-color-1 about-social-card"
             >
               <i className="fa-brands fa-square-x-twitter"></i>
-            </a>
-            <a
-              href="https://behance.net"
-              target="_blank"
-              rel="noreferrer"
-              className="default-card card-color-1 about-social-card"
-            >
-              <i className="fa-brands fa-behance"></i>
             </a>
           </div>
         </div>

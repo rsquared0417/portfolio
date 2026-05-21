@@ -31,7 +31,6 @@ export function Work() {
             <h2 className="section-header work-header-text">Selected Work</h2>
           </Link>
         </div>
-
         <div className="work-list">
           {featured.map((item) => (
             <div key={item.id} className="work-item">
@@ -107,7 +106,6 @@ export function Work() {
           ))}
         </div>
       </div>
-
       <Link
         to="/experience"
         state={{ tab: "case-studies" }}

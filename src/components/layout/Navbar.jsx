@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import "./Navbar.css";
+import portfolioData from "../../data/portfolioData";
 
 const navLinks = [
   { label: "About", link: "/about" },
@@ -9,6 +10,7 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const { shortName, role } = portfolioData;
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export function Navbar() {
     <header className="navbar">
       <div className="navbar-inner">
         <Link to="/" className="navbar-brand">
-          Ricky Roman / Front End Developer
+          {shortName} / {role[2]}
         </Link>
 
         <nav className={`navbar-menu ${menuOpen ? "navbar-menu--open" : ""}`}>

@@ -46,7 +46,6 @@ export function Capabilities() {
           ))}
         </div>
       </div>
-
       <div className="about-sub-section">
         <h2 className="section-header about-title">About</h2>
         <div className="about-content">
@@ -63,7 +62,10 @@ export function Capabilities() {
           </div>
           <div className="about-misc">
             <div className="about-misc-image">
-              <span>Photo</span>
+              <img
+                src="/images/portrait/casual-portrait.jpeg"
+                alt="Ricky Roman"
+              />
             </div>
             <Link to="/about" className="about-learn-more">
               <span>Learn More</span>
