@@ -10,7 +10,11 @@ export function ExperienceSingle() {
     return (
       <main className="exp-single-notfound container">
         <p>Experience not found.</p>
-        <Link to="/experience" className="exp-single-back">
+        <Link
+          to="/experience"
+          state={{ tab: "work" }}
+          className="exp-single-back"
+        >
           ← Back to Experience
         </Link>
       </main>
@@ -20,7 +24,11 @@ export function ExperienceSingle() {
   return (
     <main className="exp-single container">
       {/* Back link */}
-      <Link to="/experience" className="exp-single-back">
+      <Link
+        to="/experience"
+        state={{ tab: "work" }}
+        className="exp-single-back"
+      >
         <i className="fa-solid fa-arrow-left"></i>
         <span>Back to Experience</span>
       </Link>
@@ -102,7 +110,11 @@ export function ExperienceSingle() {
 
       {/* Bottom nav */}
       <div className="exp-single-footer">
-        <Link to="/experience" className="exp-single-footer-btn">
+        <Link
+          to="/experience"
+          state={{ tab: "work" }}
+          className="exp-single-footer-btn"
+        >
           <i className="fa-solid fa-arrow-left"></i>
           <span>Back to Experience</span>
         </Link>

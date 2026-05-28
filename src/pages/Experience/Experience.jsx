@@ -19,15 +19,30 @@ const STATUS_CLASSES = {
 
 export function Experience() {
   const { workStatus } = portfolioData;
+  const [currWorkStatus, setCurrWorkStatus] = useState(workStatus[0]);
   const location = useLocation();
   const initialTab = location.state?.tab || "work";
   const [activeTab, setActiveTab] = useState(initialTab);
+
+  const statusColors = {
+    "Open to work": "var(--color-green)",
+    "Open to collaborate": "var(--color-blue)",
+    "Currently employed": "var(--color-red)",
+  };
 
   return (
     <main className="experience-page container">
       <div className="experience-header">
         <span className="exp-pill-label">Experience</span>
-        <span className="exp-pill-label">{portfolioData.workStatus[0]}</span>
+        <p
+          className="footer-cta-label"
+          style={{
+            color: statusColors[currWorkStatus],
+            borderColor: statusColors[currWorkStatus],
+          }}
+        >
+          • {currWorkStatus}
+        </p>
       </div>
       {/* Filter Tabs */}
       <div className="exp-tabs">

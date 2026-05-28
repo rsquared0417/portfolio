@@ -32,45 +32,47 @@ const whatIDo = [
 export function Capabilities() {
   return (
     <section className="capabilities-section container">
-      <div className="what-i-do-sub-section">
-        <h2 className="section-header what-i-do-title">What I Do</h2>
-        <div className="what-i-do-list">
-          {whatIDo.map((item) => (
-            <div key={item.number} className="what-i-do-item">
-              <h3 className="card-label what-i-do-label">
-                <span className="what-i-do-number">{item.number}.</span>
-                {item.title}
-              </h3>
-              <p className="card-content">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="about-sub-section">
-        <h2 className="section-header about-title">About</h2>
-        <div className="about-content">
-          <div className="about-text">
-            <h3 className="about-heading">
-              From keeping sites alive to building them from scratch.
-            </h3>
-            <p className="card-content">
-              I spent years managing 150+ production WordPress sites — keeping
-              them stable, secure, and reliable. Now I'm applying that same
-              engineering mindset to front-end development, building with React
-              and core web technologies.
-            </p>
+      <div className="capabilities-sub-section">
+        <div className="what-i-do-sub-section">
+          <h2 className="section-header what-i-do-title">What I Do</h2>
+          <div className="what-i-do-list">
+            {whatIDo.map((item) => (
+              <div key={item.number} className="what-i-do-item">
+                <h3 className="card-label what-i-do-label">
+                  <span className="what-i-do-number">{item.number}.</span>
+                  {item.title}
+                </h3>
+                <p className="card-content">{item.description}</p>
+              </div>
+            ))}
           </div>
-          <div className="about-misc">
-            <div className="about-misc-image">
-              <img
-                src="/images/portrait/casual-portrait.jpeg"
-                alt="Ricky Roman"
-              />
+        </div>
+        <div className="about-sub-section">
+          <h2 className="section-header about-title">About</h2>
+          <div className="about-content">
+            <div className="about-text">
+              <h3 className="about-heading">
+                From keeping sites alive to building them from scratch.
+              </h3>
+              <p className="card-content">
+                I spent years managing 150+ production WordPress sites — keeping
+                them stable, secure, and reliable. Now I'm applying that same
+                engineering mindset to front-end development, building with
+                React and core web technologies.
+              </p>
             </div>
-            <Link to="/about" className="about-learn-more">
-              <span>Learn More</span>
-              <i className="fa-solid fa-arrow-right"></i>
-            </Link>
+            <div className="about-misc">
+              <div className="about-misc-image">
+                <img
+                  src="/images/portrait/casual-portrait.jpeg"
+                  alt="Ricky Roman"
+                />
+              </div>
+              <Link to="/about" className="about-learn-more">
+                <span>Learn More</span>
+                <i className="fa-solid fa-arrow-right"></i>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

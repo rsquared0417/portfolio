@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import "./Hero.css";
 import portfolioData from "../../../data/portfolioData";
 
@@ -34,11 +35,15 @@ export function Hero() {
           <h2 className="section-label">About</h2>
         </div>
         <div className="card-content">
-          <p className="hero-card-about-bio">{data.bio}</p>
-          <a href="/work" className="button button-about">
+          {data.bio.map((sentence, index) => (
+            <p className="hero-card-about-bio" key={index}>
+              {sentence}
+            </p>
+          ))}
+          <Link to="/experience" className="button-with-icon">
             <span>View my work</span>
-            <i className="fa-solid fa-arrow-turn-up"></i>
-          </a>
+            <i class="fa-solid fa-arrow-right"></i>
+          </Link>
         </div>
       </div>
       {/* CARD 3 — HIGHLIGHTS */}
@@ -60,11 +65,15 @@ export function Hero() {
       </div>
       {/* CARD 4 — CV */}
       <div className="default-card card-color-1 hero-card-cv">
-        <span className="hero-card-cv-title">CV</span>
+        <span className="hero-card-cv-title">CV / Resume</span>
         {/* CV button */}
-        <a href="/cv.pdf" download className="button-cv">
-          <i className="fa-solid fa-arrow-down"></i>
+        <a
+          href="/documents/Ricky_Martin_Roman_Resume_General.pdf"
+          download
+          className="button-with-icon"
+        >
           <span>Download</span>
+          <i className="fa-solid fa-arrow-down"></i>
         </a>
       </div>
       {/* CARD 5 — DESIGN 1*/}
@@ -95,7 +104,7 @@ export function Hero() {
         <p className="social-card__note">Let's connect</p>
         <div className="social-card__links">
           <a
-            href={data.github}
+            href={data.socialLinks.github}
             target="_blank"
             rel="noreferrer"
             className="social-card__link"
@@ -103,7 +112,7 @@ export function Hero() {
             <i className="fa-brands fa-github"></i>
           </a>
           <a
-            href={data.linkedin}
+            href={data.socialLinks.linkedin}
             target="_blank"
             rel="noreferrer"
             className="social-card__link"
@@ -113,10 +122,20 @@ export function Hero() {
           <a href={`mailto:${data.email}`} className="social-card__link">
             <i className="fa-regular fa-envelope"></i>
           </a>
-          <a href={`mailto:${data.email}`} className="social-card__link">
+          <a
+            href={data.socialLinks.instagram}
+            target="_blank"
+            rel="noreferrer"
+            className="social-card__link"
+          >
             <i className="fa-brands fa-instagram"></i>
           </a>
-          <a href={`mailto:${data.email}`} className="social-card__link">
+          <a
+            href={data.socialLinks.twitter}
+            target="_blank"
+            rel="noreferrer"
+            className="social-card__link"
+          >
             <i className="fa-brands fa-square-x-twitter"></i>
           </a>
         </div>

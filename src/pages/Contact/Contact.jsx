@@ -1,3 +1,4 @@
+import { useState } from "react";
 import portfolioData from "../../data/portfolioData";
 import "./Contact.css";
 
@@ -8,7 +9,6 @@ const contactMethods = [
     description: "Best way to reach me for work inquiries.",
     icon: "fa-regular fa-envelope",
     href: (data) => `mailto:${data.email}`,
-    value: (data) => data.email,
     cta: "Send an email",
   },
   {
@@ -16,8 +16,7 @@ const contactMethods = [
     label: "GitHub",
     description: "Check out my repositories and open source work.",
     icon: "fa-brands fa-github",
-    href: (data) => data.github,
-    value: (data) => data.github,
+    href: (data) => data.socialLinks.github,
     cta: "View GitHub",
   },
   {
@@ -25,20 +24,34 @@ const contactMethods = [
     label: "LinkedIn",
     description: "Connect with me professionally.",
     icon: "fa-brands fa-linkedin",
-    href: (data) => data.linkedin,
-    value: (data) => data.linkedin,
+    href: (data) => data.socialLinks.linkedin,
     cta: "View LinkedIn",
   },
 ];
 
 export function Contact() {
+  const { workStatus } = portfolioData;
+  const [currWorkStatus, setCurrWorkStatus] = useState(workStatus[0]);
+  const statusColors = {
+    "Open to work": "var(--color-green)",
+    "Open to collaborate": "var(--color-blue)",
+    "Currently employed": "var(--color-red)",
+  };
+
   return (
     <main className="contact-page container">
       {/* Header */}
       <div className="contact-header">
         <div className="contact-header__status">
-          <span className="contact-status-dot" />
-          <span className="contact-status-text">Available for work</span>
+          <p
+            className="footer-cta-label"
+            style={{
+              color: statusColors[currWorkStatus],
+              borderColor: statusColors[currWorkStatus],
+            }}
+          >
+            • {currWorkStatus}
+          </p>
         </div>
         <h1 className="contact-header__headline">Let's Work Together</h1>
         <p className="contact-header__sub">
@@ -78,7 +91,7 @@ export function Contact() {
         <div className="contact-availability__left">
           <p className="contact-availability__label">Current Status</p>
           <h2 className="contact-availability__heading">
-            Open to front-end roles and freelance work.
+            Open to Front-End, Web Developer and WordPress Roles.
           </h2>
           <p className="contact-availability__body">
             Based in the Philippines. Available for remote work and open to
@@ -94,7 +107,9 @@ export function Contact() {
             </span>
           </div>
           <div className="contact-availability__stat">
-            <span className="contact-availability__stat-value">Remote</span>
+            <span className="contact-availability__stat-value">
+              Remote / Hybrid
+            </span>
             <span className="contact-availability__stat-label">
               Work preference
             </span>

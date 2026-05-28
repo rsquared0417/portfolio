@@ -4,11 +4,16 @@
 .capabilities-section {
   display: flex;
   flex-direction: column;
+}
+
+.capabilities-sub-section {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-6);
   background-color: var(--color-bg-invert);
   color: var(--color-text-invert);
-  padding: var(--space-6) var(--space-5) !important;
   border-radius: var(--radius-main);
+  padding: var(--space-6) var(--space-5);
 }
 
 /* ============================================
@@ -118,15 +123,18 @@
 .about-misc-image {
   width: 100%;
   flex: 1;
-  min-height: 160px;
-  background-color: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 200px;
   border-radius: var(--radius-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.2);
-  font-size: var(--text-sm);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-misc-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 .about-learn-more {
@@ -176,7 +184,7 @@
    DESKTOP — 1024px+
    ============================================ */
 @media (min-width: 1024px) {
-  .capabilities-section {
+  .capabilities-sub-section {
     padding: var(--space-8);
   }
 

@@ -29,18 +29,31 @@
 
 @media (min-width: 1024px) {
   .hero-section {
-    min-height: 85vh;
     gap: var(--space-4);
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 1fr 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr auto auto;
     grid-template-areas:
-      "hero hero about about feature feature cv cv"
-      "hero hero about about design-1 design-1 design-2 design-2"
-      "hero hero skills skills skills skills design-2 design-2"
-      "social social social social social social design-2 design-2";
+      "hero about  feature  cv"
+      "hero about  feature  cv"
+      "hero about  design-1 design-1"
+      "hero skills design-2 design-2"
+      "social social design-2 design-2";
+    min-height: 85vh;
+  }
+
+  .hero-card-hero {
+    min-height: unset;
+    padding: var(--space-6);
+  }
+
+  .hero-card-design-1 {
+    min-height: 140px;
+  }
+
+  .hero-card-design-2 {
+    min-height: unset;
   }
 }
-
 /* CARD — HERO */
 .hero-card-hero {
   grid-area: hero;
@@ -155,6 +168,7 @@
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.8;
+  text-align: justify;
 }
 
 .button-about {
@@ -295,16 +309,20 @@
 .hero-card-design-1 {
   grid-area: design-1;
   min-height: 140px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-bg-muted) !important;
 }
 
-@media (min-width: 1024px) {
-  .hero-card-design-1 {
-    min-height: 180px;
-  }
+.hero-card-design-1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* ============================================
@@ -313,13 +331,27 @@
 .hero-card-design-2 {
   grid-area: design-2;
   min-height: 200px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-bg-muted) !important;
 }
 
+.hero-card-design-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @media (min-width: 1024px) {
+  .hero-card-design-1 {
+    min-height: unset;
+  }
+
   .hero-card-design-2 {
     min-height: unset;
   }

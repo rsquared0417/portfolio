@@ -1,76 +1,42 @@
-/* ============================================
-   FOOTER
-   ============================================ */
+/* FOOTER */
 .footer {
-  padding: var(--space-6) var(--space-5);
-  margin-top: var(--space-4);
-}
-
-/* ============================================
-   GRID — MOBILE FIRST
-   ============================================ */
-.footer-grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "cta"
     "links"
     "social"
-    "copyright";
-  gap: var(--space-4);
+    "cta";
+  gap: var(--spacing-default);
 }
 
 @media (min-width: 640px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-      "cta     cta"
-      "links   social"
-      "copyright copyright";
+      "cta cta"
+      "links social";
   }
 }
 
 @media (min-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: 1fr 200px 200px;
-    grid-template-areas:
-      "cta     links   social"
-      "copyright copyright copyright";
+  .footer {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: "cta links social";
   }
 }
 
-/* ============================================
-   BASE CARD
-   ============================================ */
-.footer-card {
+/* CTA */
+.footer-cta {
+  grid-area: cta;
+  padding: var(--spacing-large);
+  gap: var(--spacing-default);
+  border-radius: var(--radius-main);
   display: flex;
   flex-direction: column;
 }
 
-/* ============================================
-   CTA CARD
-   ============================================ */
-.footer-card--cta {
-  grid-area: cta;
-  padding: var(--space-8) var(--space-6);
-  gap: var(--space-5);
-  border-radius: var(--radius-main);
-}
-
-.footer-cta-label {
-  display: inline-block;
-  align-self: flex-start;
-  font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 .footer-cta-heading {
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -78,10 +44,10 @@
   max-width: 400px;
 }
 
-.footer-cta-btn {
+.footer-cta-button {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
   align-self: flex-start;
   padding: var(--space-3) var(--space-5);
   background-color: var(--color-text-invert);
@@ -94,14 +60,33 @@
   transition: opacity 150ms ease;
 }
 
-.footer-cta-btn:hover {
+.footer-cta-button:hover {
   opacity: 0.85;
+}
+
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-copyright-name {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-copyright-text {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* ============================================
    LINKS CARD
    ============================================ */
-.footer-card--links {
+.footer-links {
   grid-area: links;
 }
 
@@ -149,7 +134,7 @@
 /* ============================================
    SOCIAL CARD
    ============================================ */
-.footer-card--social {
+.footer-social {
   grid-area: social;
 }
 
@@ -185,27 +170,4 @@
   font-size: var(--text-base);
   width: 16px;
   text-align: center;
-}
-
-/* ============================================
-   COPYRIGHT STRIP
-   ============================================ */
-.footer-copyright {
-  grid-area: copyright;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-4) 0;
-  border-top: 1px solid var(--color-border);
-}
-
-.footer-copyright-name {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.footer-copyright-text {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
 }

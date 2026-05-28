@@ -17,7 +17,7 @@ const workExperience = [
       {
         title: "Security & Vulnerability Management",
         description:
-          "Conducted security hardening, vulnerability remediation, and proactive monitoring using Wordfence and ManageWP to protect client websites from threats and downtime.",
+          "Conducted security hardening, vulnerability remediation, and proactive monitoring using WordFence and ManageWP to protect client websites from threats and downtime.",
       },
       {
         title: "Hosting & Performance Troubleshooting",

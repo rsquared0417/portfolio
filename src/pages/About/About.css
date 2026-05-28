@@ -1,19 +1,12 @@
-/* ============================================
-   PAGE
-   ============================================ */
 .about-page {
-  padding: var(--space-6) var(--space-5) !important;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  min-height: calc(100vh - var(--nav-height));
+  gap: var(--spacing-default);
 }
 
-/* ============================================
-   HEADLINE
-   ============================================ */
+/* HEADLINE */
 .about-headline {
-  padding: var(--space-6) var(--space-6);
+  padding: var(--space-6);
 }
 
 .about-headline__text {
@@ -24,9 +17,7 @@
   color: var(--color-text);
 }
 
-/* ============================================
-   THREE COLUMN GRID
-   ============================================ */
+/* GRID */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -45,27 +36,25 @@
 
 @media (min-width: 1024px) {
   .about-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.4fr 1fr;
     align-items: start;
   }
 
   .about-col--right {
     grid-column: auto;
+    position: sticky;
+    top: var(--space-4);
   }
 }
 
-/* ============================================
-   COLUMNS
-   ============================================ */
+/* COLUMNS */
 .about-col {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-/* ============================================
-   CARDS
-   ============================================ */
+/* CARDS */
 .about-card {
   display: flex;
   flex-direction: column;
@@ -74,6 +63,8 @@
 
 /* Bio */
 .about-card--bio {
+  display: flex;
+  gap: var(--spacing-default);
   padding: var(--space-5);
 }
 
@@ -81,11 +72,16 @@
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.85;
+  text-align: justify;
+  text-indent: var(--text-4xl);
 }
 
-/* ============================================
-   ACHIEVEMENTS
-   ============================================ */
+/* CV DOWNLOAD */
+.about-cv-download {
+  padding: var(--space-4) var(--space-5);
+}
+
+/* ACHIEVEMENTS */
 .about-achievements {
   display: flex;
   flex-direction: column;
@@ -121,9 +117,7 @@
   line-height: 1.5;
 }
 
-/* ============================================
-   EDUCATION
-   ============================================ */
+/* EDUCATION & CERTIFICATIONS */
 .about-education {
   display: flex;
   flex-direction: column;
@@ -156,9 +150,7 @@
   color: var(--color-text-muted);
 }
 
-/* ============================================
-   CORE SKILLS
-   ============================================ */
+/* CORE SKILLS */
 .about-skills {
   display: flex;
   flex-direction: column;
@@ -191,18 +183,42 @@
   line-height: 1.7;
 }
 
-/* ============================================
-   PHOTO
-   ============================================ */
+/* HOBBIES */
+.about-hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.about-hobby-tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.about-hobby-tag:hover {
+  background-color: var(--color-bg-invert);
+  color: var(--color-text-invert);
+  border-color: var(--color-bg-invert);
+}
+
+/* PHOTO */
 .about-card--photo {
-  min-height: 380px;
   overflow: hidden;
+  min-height: 420px;
 }
 
 .about-photo-placeholder {
   width: 100%;
   height: 100%;
-  min-height: 380px;
+  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,12 +230,13 @@
 .about-photo {
   width: 100%;
   height: 100%;
+  min-height: 420px;
   object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
-/* ============================================
-   SOCIAL GRID
-   ============================================ */
+/* SOCIAL GRID */
 .about-social-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

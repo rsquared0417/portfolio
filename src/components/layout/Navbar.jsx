@@ -33,39 +33,35 @@ export function Navbar() {
   };
 
   return (
-    <header className="navbar">
-      <div className="navbar-inner">
-        <Link to="/" className="navbar-brand">
-          {shortName} / {role[2]}
-        </Link>
-
-        <nav className={`navbar-menu ${menuOpen ? "navbar-menu--open" : ""}`}>
-          <ul className="navbar-list">
-            {navLinks.map((link, index) => (
-              <li key={index} className="navbar-item">
-                <Link
-                  to={link.link}
-                  className="navbar-link"
-                  onClick={closeMenu}
-                >
-                  <span className="navbar-link-label">{link.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <button
-          className={`navbar-hamburger ${menuOpen ? "navbar-hamburger--open" : ""}`}
-          onClick={toggleMenu}
-          aria-label="Toggle Menu"
-          aria-expanded={menuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+    <header className="navbar container">
+      <Link to="/" className="navbar-brand">
+        {shortName}
+      </Link>
+      <nav className={`navbar-menu ${menuOpen ? "navbar-menu--open" : ""}`}>
+        <ul className="navbar-list">
+          {navLinks.map((link, index) => (
+            <li key={index} className="button-main navbar-button">
+              <Link
+                to={link.link}
+                className="button-main-label"
+                onClick={closeMenu}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <button
+        className={`navbar-hamburger ${menuOpen ? "navbar-hamburger--open" : ""}`}
+        onClick={toggleMenu}
+        aria-label="Toggle Menu"
+        aria-expanded={menuOpen}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
   );
 }

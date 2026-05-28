@@ -27,7 +27,11 @@ export function CaseStudySingle() {
     return (
       <main className="cs-single-notfound container">
         <p>Case study not found.</p>
-        <Link to="/experience" className="cs-single-back">
+        <Link
+          to="/experience"
+          state={{ tab: "case-studies" }}
+          className="cs-single-back"
+        >
           ← Back to Experience
         </Link>
       </main>
@@ -37,7 +41,11 @@ export function CaseStudySingle() {
   return (
     <main className="cs-single container">
       {/* Back link */}
-      <Link to="/experience" className="cs-single-back">
+      <Link
+        to="/experience"
+        state={{ tab: "case-studies" }}
+        className="cs-single-back"
+      >
         <i className="fa-solid fa-arrow-left"></i>
         <span>Back to Experience</span>
       </Link>
@@ -161,7 +169,7 @@ export function CaseStudySingle() {
               </a>
             ) : (
               <span className="cs-single-detail-value cs-single-detail-value--faint">
-                Not deployed yet
+                Not available
               </span>
             )}
           </div>

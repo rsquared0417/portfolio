@@ -15,9 +15,7 @@ const STATUS_CLASSES = {
 };
 
 export function Work() {
-  const featured = projects
-    .filter((p) => p.status === "completed" || p.status === "in-progress")
-    .slice(0, 2);
+  const featured = projects.filter((p) => p.status === "completed").slice(0, 3);
 
   return (
     <section className="work-section container">
@@ -69,20 +67,17 @@ export function Work() {
                       {STATUS_LABELS[item.status]}
                     </span>
                   </div>
+                  <Link
+                    to={`/experience/case-studies/${item.id}`}
+                    className="work-item-link"
+                  >
+                    <span className="button-with-icon">
+                      View Case Study
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </span>
+                  </Link>
                 </div>
               </div>
-
-              {/* Mobile CTA */}
-              <Link
-                to={`/experience/case-studies/${item.id}`}
-                className="work-item-link"
-              >
-                <span className="work-item-link-button">
-                  View Case Study
-                  <i className="fa-solid fa-square-arrow-up-right"></i>
-                </span>
-              </Link>
-
               {/* Image / screenshot panel */}
               <div className="work-item-image">
                 {item.thumbnail ? (
@@ -111,9 +106,9 @@ export function Work() {
         state={{ tab: "case-studies" }}
         className="work-view-more"
       >
-        <span className="work-view-more-button">
+        <span className="button-with-icon">
           <p>View All Projects</p>
-          <i className="fa-solid fa-square-arrow-up-right"></i>
+          <i className="fa-solid fa-arrow-right"></i>
         </span>
       </Link>
     </section>

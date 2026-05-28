@@ -2,19 +2,6 @@ import portfolioData from "../../data/portfolioData";
 import "./About.css";
 
 export function About() {
-  /*const {
-    name,
-    portrait,
-    headline,
-    bio,
-    email,
-    github,
-    linkedin,
-    education,
-    certifications,
-    achievements,
-    skills,
-  } = portfolioData;*/
   const data = { ...portfolioData };
 
   return (
@@ -24,16 +11,17 @@ export function About() {
         <h1 className="about-headline__text">{data.headline}</h1>
       </div>
 
-      {/* Three column grid */}
       <div className="about-grid">
         {/* LEFT COLUMN */}
         <div className="about-col about-col--left">
-          {/* Bio */}
           <div className="default-card card-color-1 about-card about-card--bio">
-            <p className="about-bio">{data.detailedBio}</p>
+            {data.detailedBio.map((paragraph, index) => (
+              <p key={index} className="about-bio">
+                {paragraph}
+              </p>
+            ))}
           </div>
 
-          {/* Key Achievements */}
           <div className="default-card card-color-1 about-card">
             <div className="card-label">
               <h2 className="section-label">Key Achievements</h2>
@@ -47,11 +35,27 @@ export function About() {
               ))}
             </div>
           </div>
+
+          {/* CV / Resume card */}
+          <div className="default-card card-color-1 about-card">
+            <div className="card-label">
+              <h2 className="section-label">CV / Resume</h2>
+            </div>
+            <div className="about-cv-download">
+              <a
+                href="/documents/Ricky_Martin_Roman_Resume_General.pdf"
+                download
+                className="button-with-icon"
+              >
+                <span>Download CV</span>
+                <i className="fa-solid fa-arrow-down"></i>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* CENTER COLUMN */}
         <div className="about-col about-col--center">
-          {/* Education */}
           <div className="default-card card-color-1 about-card">
             <div className="card-label">
               <h2 className="section-label">Education</h2>
@@ -67,6 +71,7 @@ export function About() {
               ))}
             </div>
           </div>
+
           <div className="default-card card-color-1 about-card">
             <div className="card-label">
               <h2 className="section-label">Certifications</h2>
@@ -83,7 +88,6 @@ export function About() {
             </div>
           </div>
 
-          {/* Core Skills */}
           <div className="default-card card-color-1 about-card">
             <div className="card-label">
               <h2 className="section-label">Core Skills</h2>
@@ -97,38 +101,42 @@ export function About() {
               ))}
             </div>
           </div>
-          {/* Hobbies */}
+
           <div className="default-card card-color-1 about-card">
             <div className="card-label">
-              <h2 className="section-label">Hobbies</h2>
+              <h2 className="section-label">Hobbies & Interests</h2>
             </div>
-            <div className="about-hobbies">
-              {data.hobbies.map((hobby) => (
-                <span key={hobby} className="about-hobby-item">
-                  {hobby}
-                </span>
-              ))}
+            <div className="card-content">
+              <div className="about-hobbies">
+                {data.hobbies.map((hobby) => (
+                  <span key={hobby} className="about-hobby-tag">
+                    {hobby}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {/* RIGHT COLUMN */}
         <div className="about-col about-col--right">
-          {/* Photo */}
           <div className="default-card card-color-1 about-card about-card--photo">
             <div className="about-photo-placeholder">
-              <img
-                src={data.portrait}
-                alt={`${data.name}'s portrait`}
-                className="about-photo"
-              />
+              {data.portrait ? (
+                <img
+                  src={data.portrait}
+                  alt={`${data.name}'s portrait`}
+                  className="about-photo"
+                />
+              ) : (
+                <span>Photo</span>
+              )}
             </div>
           </div>
 
-          {/* Social grid */}
           <div className="about-social-grid">
             <a
-              href={data.github}
+              href={data.socialLinks.github}
               target="_blank"
               rel="noreferrer"
               className="default-card card-color-1 about-social-card"
@@ -136,7 +144,7 @@ export function About() {
               <i className="fa-brands fa-github"></i>
             </a>
             <a
-              href={data.linkedin}
+              href={data.socialLinks.linkedin}
               target="_blank"
               rel="noreferrer"
               className="default-card card-color-1 about-social-card"
@@ -150,7 +158,7 @@ export function About() {
               <i className="fa-regular fa-envelope"></i>
             </a>
             <a
-              href="https://instagram.com"
+              href={data.socialLinks.instagram}
               target="_blank"
               rel="noreferrer"
               className="default-card card-color-1 about-social-card"
@@ -158,7 +166,7 @@ export function About() {
               <i className="fa-brands fa-instagram"></i>
             </a>
             <a
-              href="https://twitter.com"
+              href={data.socialLinks.twitter}
               target="_blank"
               rel="noreferrer"
               className="default-card card-color-1 about-social-card"
